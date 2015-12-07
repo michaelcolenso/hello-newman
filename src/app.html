@@ -1,10 +1,13 @@
 <template>
-  <require from="nav-bar.html"></require>
-  <require from="bootstrap/css/bootstrap.css"></require>
+  <!-- <require from="nav-bar.html"></require>
+  <require from="bootstrap/css/bootstrap.css"></require> -->
 
   <nav-bar router.bind="router"></nav-bar>
 
   <div class="page-host">
+    <div style="height: 0; width: 0; position: absolute; visibility: hidden">
+      <!-- inject:svg --><!-- endinject -->
+    </div>
     <router-view></router-view>
   </div>
 </template>

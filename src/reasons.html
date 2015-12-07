@@ -1,0 +1,33 @@
+<template>
+  <section class="reasons au-animate">
+    <div class="althero">
+      <div class="hero-inner">
+        <a href="" class="hero-logo">
+          <svg class="icon">
+            <use xlink:href="#checkmark" />
+          </svg>
+        </a>
+          <div class="hero-copy">
+            <h1>${heading}</h1>
+            <p>${info}</p>
+            <a class="button" href="/#/contact">Let's Talk.</a>
+          </div>
+        </div>
+      </div>
+
+    <div class="cards" >
+      <div class="card" repeat.for="highlight of highlights">
+        <div class="card-image">
+          <img src="${highlight.imageUrl}" alt="">
+        </div>
+        <div class="card-header">
+          ${highlight.headline}
+        </div>
+        <div class="card-copy">
+          <p>${highlight.copy}</p>
+          <p><a href="https://${highlight.link}">${highlight.link}</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>

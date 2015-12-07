@@ -1,0 +1,71 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the card component.
+// -----------------------------------------------------------------------------
+
+.cards
+  +display(flex)
+  +flex-wrap(wrap)
+  +align-items(stretch)
+
+  .card
+    $base-border-color: $color-6 !default
+    $base-border-radius: 8px !default
+    $base-background-color: $color-1 !default
+    $base-spacing: 1.5em !default
+    $action-color: #477dca !default
+    $dark-gray: #333333 !default
+    $base-font-color: $dark-gray !default
+    $card-border-color: $base-border-color
+    $card-border: 1px solid $card-border-color
+    $card-border-hover: 1px solid $color-6
+    $card-background: lighten($card-border-color, 10%)
+    $card-header-background: $card-background
+    $card-margin: 1em
+    $card-image-hover-opacity: 0.0
+    $card-image-hover-color: $color-6
+    +flex-basis(20%)
+    +flex-grow(1)
+    +transition(all 0.2s ease-in-out)
+    +transition-delay(0.2s)
+    background-color: $card-background
+    border-radius: $base-border-radius
+    border: $card-border
+    box-shadow: 0 2px 4px darken($base-background-color, 90%)
+    cursor: pointer
+    margin: 0 $card-margin $base-spacing $card-margin
+    .card-image
+      overflow: hidden
+      background-color: $card-image-hover-color
+      img
+        +transition(all 0.2s ease-in-out)
+        +transform(scale(1))
+        border-top-left-radius: $base-border-radius
+        border-top-right-radius: $base-border-radius
+        max-width: 100%
+        opacity: 1
+        &:hover
+          +transform(scale(1.5))
+    .card-header
+      +transition(all 0.2s ease-in-out)
+      background-color: $card-header-background
+      border-bottom: $card-border
+      border-radius: $base-border-radius $base-border-radius 0 0
+      font-weight: bold
+      line-height: 1.5em
+      padding: $base-spacing / 3 $base-spacing / 2
+    .card-copy
+      font-size: 0.9em
+      line-height: 1.5em
+      padding: $base-spacing / 2 $base-spacing / 2
+      p
+        margin: 0 0 $base-spacing / 2
+    &:focus,
+    &:hover
+      cursor: pointer
+      border: $card-border-hover
+
+
+    &:active
+      background-color: $card-background
+      .card-header
+        background-color: $card-background
